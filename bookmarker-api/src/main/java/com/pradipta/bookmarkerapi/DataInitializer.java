@@ -4,11 +4,14 @@ import com.pradipta.bookmarkerapi.domain.Bookmark;
 import com.pradipta.bookmarkerapi.domain.BookmarkRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
 import java.time.Instant;
 
-@Component
+/**
+ * Unused as of now as Flyway migration is used to populate the data
+ */
+
+//@Component
 @RequiredArgsConstructor
 public class DataInitializer implements CommandLineRunner {
 

@@ -18,3 +18,26 @@ the Hibernate performance -
 Following annotation can be added in the DTO to return custom field names
 @JsonProperty("isFirst")
 private boolean isFirst;
+
+
+Level 2 : Flyway migration
+--------------------------
+Following dependency gets added after selecting Flyway from Spring Boot Starter -
+<dependency>
+<groupId>org.flywaydb</groupId>
+<artifactId>flyway-core</artifactId>
+</dependency>
+
+There will be a folder named db.migation under resources. It will get created by Spring Boot Starter.
+
+The SQL Script needs to be created with the name V<Version>__<name>.sql.
+
+After running the application, database can be checked. In this project H2 is used.
+The console is available in the URL - http://localhost:8080/h2-console
+
+Flyway will keep trak of all migration script execution history in the table - flyway_schema_history
+
+Everytime some script needs to be executed, always create a new one, don't change existing script.
+
+Specify the Flyway migration script for different databases using the following configuration -
+spring.flyway.locations=classpath:/db/migration/{vendor}
