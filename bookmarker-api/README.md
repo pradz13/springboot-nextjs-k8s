@@ -41,3 +41,7 @@ Everytime some script needs to be executed, always create a new one, don't chang
 
 Specify the Flyway migration script for different databases using the following configuration -
 spring.flyway.locations=classpath:/db/migration/{vendor}
+
+Level 3 : DTO Projections
+-------------------------
+BookmarkMapper class is written to map from Entity to DTO.
